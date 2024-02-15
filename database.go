@@ -8,7 +8,6 @@ import (
 	"sync"
 )
 
-// Database represents the main structure for managing arrays.
 type Database struct {
 	Data map[string][]int
 	Lock sync.Mutex
@@ -32,7 +31,6 @@ func (db *Database) newArray(name string, elements ...string) {
 	var newArray []int
 	for _, elem := range elements {
 		// Convert elements to integers and append to the array
-		// Handle error if conversion fails
 		if num, err := strconv.Atoi(elem); err == nil {
 			newArray = append(newArray, num)
 		}

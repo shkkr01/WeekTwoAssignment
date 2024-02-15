@@ -83,25 +83,25 @@ func handleCommand(db *Database, command string) {
 		if len(parts) > 1 {
 			db.newArray(parts[1], parts[2:]...)
 		} else {
-			fmt.Println("Error: Usage - new array_name [element1, element2, ...]")
+			fmt.Println("Error: Creating new array_name [element1, element2, ...]")
 		}
 	case "show":
 		if len(parts) > 1 {
 			db.showArray(parts[1])
 		} else {
-			fmt.Println("Error: Usage - show array_name")
+			fmt.Println("Error:- show array_name")
 		}
 	case "del":
 		if len(parts) > 1 {
 			db.deleteArray(parts[1])
 		} else {
-			fmt.Println("Error: Usage - del array_name")
+			fmt.Println("Error:- delete array_name")
 		}
 	case "merge":
 		if len(parts) == 3 {
 			db.mergeArrays(parts[1], parts[2])
 		} else {
-			fmt.Println("Error: Usage - merge array_name1 array_name2")
+			fmt.Println("Error:- merge array_name1 array_name2")
 		}
 	default:
 		fmt.Println("Error:" + parts[0] + "" + "is not a supported operation")
